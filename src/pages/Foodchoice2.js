@@ -84,7 +84,7 @@ function Foodchoice2() {
     const [filterFn, setFilterFn] = useState({fn: items => { return items;}})
     const { TbContainer, TbHead, TablePaginations, recordsAfterPagingAndSorting } = useTable(records, headCells, filterFn);
 
-    const agent = new https.Agent({  
+    const agent = new http.Agent({  
         rejectUnauthorized: false
     }); 
 
@@ -95,7 +95,7 @@ function Foodchoice2() {
     const getItems = async () => {
         // const response = await Axios.get('http://localhost:3001/api/foodchoicedb', {
         // const response = await Axios.get('http://159.65.133.73/api/products', {
-        const response = await Axios.get('https://159.65.133.73/api/stage', {
+        const response = await Axios.get('http://159.65.133.73/api/stage', {
             headers: {'Content-Type': 'application/json'},
             httpsAgent: agent,
         }).then((response) => {
