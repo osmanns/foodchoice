@@ -1,0 +1,302 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+                  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+}
+.container {
+    padding: 1rem;
+    background: #f7f7f7;
+}
+.container-info {
+    padding: .5rem;
+    background: #fcfcfc;
+}
+.container-form {
+    padding: .5rem;
+    background: #f0f0f0;
+}
+
+.container-form-infomation,
+.container-form-nutrition,
+.container-form-infomation-other,
+.container-form-production {
+    padding: .5rem;
+    background: #fcfcfc;
+    margin-bottom: .5rem;
+    /* background: #f0f0f0; */
+}
+.container-form-boxgray {
+    padding: .1rem;
+    margin-bottom: 5px;
+    background: #f0f0f0;
+}
+.container-form-subtitile label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.form-input,
+.form-select {
+    padding: 0;
+    margin: .5rem 0;
+}
+.form-dynamic-input {
+    padding: 0;
+    margin: 0;
+}
+.ant-form-item-label label {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-align-left .ant-form-item-label label {
+    /* justify-content: flex-start; */
+}
+span.ant-input-group-addon {
+    width: 50px;
+}
+
+/* * ======================= Line ======================= */
+hr.line {
+    height: .75px;
+    margin: .1rem 0;
+    border-width: 0;
+    color: #d2d6da;
+    background-color: #d2d6da;
+}
+
+.barcode-box {
+    display: flex;
+    justify-content: center;
+    background-color:#f3f3f3;
+}
+
+.tools-image {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0 0 3px;
+}
+.tools-image .tools-image-zoom {
+    cursor: pointer;
+    margin: 5px 0;
+}
+.containerImage {
+    width: 100%;
+    margin: auto;
+    background-color:#e8eaf6;
+}
+.containerImage .imageSelect {
+    display: flex;
+    justify-content: center;
+    padding-left: 25px;
+}
+.containerImage .selected {
+    min-width: 320px !important;
+    min-height: 320px !important;
+}
+.containerImage .imageBox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    border: 0px solid silver;
+}
+.containerImage .imageBox .imageBoxSlider  {
+    width: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+}
+.containerImage .imageBox .imageBoxSlider img {
+    width: 100px;
+    height: 100px;
+    margin: 5px 5px;
+}
+img {
+    display: block;
+    cursor: pointer;
+}
+.arrow {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.criteria-box {
+    width: 100%;
+    height: 200px;
+    background-color: #f4f5fa;
+}
+.button-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.button-cancel {
+    line-height: 1.5715;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 1px solid transparent;
+    box-shadow: 0 2px #00000004;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    height: 32px;
+    padding: 4px 15px;
+    margin-right: 10px;
+    font-size: 14px;
+    border-radius: 2px;
+    color: #000000d9;
+    background: #fff;
+    border-color: #d9d9d9;
+}
+
+.box-data-count {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ========================================== Show Criteria ========================================== */
+.contrainer-criteria {
+    width: 100%;
+    height: auto;
+    margin: 0 0 20px 0;
+    border-radius: 1.5rem;
+    background-color: #F0F0F0;
+}
+.contrainer-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+.contrainer-card .card {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    padding: 4px;
+    margin: 5px 3px 0 3px;
+    border-radius: 10px;
+    box-shadow: -6px -6px 12px 0 rgba(255,255,255,0.5),
+                6px 6px 12px 0 rgba(0,0,0,0.1);
+    background-color: #fff;
+} 
+.contrainer-card .card > span {
+    float: left;
+    display: inline-block;
+}
+.contrainer-card .card .card-status {
+    display: inline-block;
+    height: 100%;
+    padding: 8px;
+    margin-right: 8px;
+    border-radius: inherit;
+    background-color: #DCDCDC;
+} 
+.contrainer-card .card .card-body{
+    display: inline-block;
+    height: 100%;
+    width: 79%;
+}
+.contrainer-card .card .card-body > span{
+    display: block;
+}
+.contrainer-card .card .card-body span.card-header {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0073CF;
+}
+.contrainer-card .card .card-body span.card-info {
+    font-size: 14px;
+    font-weight: 500;
+}
+.contrainer-card .card .card-body span.card-percentage {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 12px;
+    text-align: right;
+    color: #909497;
+}
+.contrainer-card .card .card-body-component{
+    display: inline-block;
+    height: 100%;
+    width: 96%;
+}
+.contrainer-card .card .card-body-component > span{
+    display: block;
+}
+.contrainer-card .card .card-body-component span.card-header {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0073CF;
+}
+
+.card:hover {
+    transform: scale(1.002);
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.04);
+}
+.contrainer-footer:hover {
+    transform: scale(1.002);
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.04);
+}
+.snack-card:hover {
+    transform: scale(1.002);
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.04);
+}
+
+#milk-contrainer, #drink-contrainer, #drink-contrainer-2, #snack-contrainer, #snack-contrainer-2, #non-criterion-contrainer {
+    display: none;
+}
+
+.contrainer-footer {
+    position: relative;
+    width: auto;
+    padding: 5px;
+    margin: 5px 3px 0 3px;
+    border-radius: 10px;
+    box-shadow: -6px -6px 12px 0 rgba(255,255,255,0.5),
+                6px 6px 12px 0 rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+.contrainer-footer .footer-text {
+    display: inline-block;
+    width: 98%;
+}
+.contrainer-footer span.criteria-text, span.sugar-text {
+    font-size: 14px;
+    font-weight: 600;
+    float: left;
+    color: #0d3b66;
+}
+.contrainer-footer span.score-text {
+    font-size: 14px;
+    font-weight: 600;
+    float: right;
+    color: #0d3b66;
+}
+.contrainer-footer span.product-score {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0073CF;
+}
+/* ========================================== End Show Criteria ========================================== */

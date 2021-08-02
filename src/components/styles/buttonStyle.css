@@ -1,0 +1,13 @@
+.link-edit {
+    padding: .9rem .5rem .25rem .5rem;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: .25rem;
+    color: #ffffff;
+    background: rgba(15, 99, 179, 0.8);
+}
+.link-edit:hover {
+    color: #ffffff;
+    background: rgb(49, 133, 243);
+    box-shadow: 0 0 4px rgb(63, 140, 241);
+}
