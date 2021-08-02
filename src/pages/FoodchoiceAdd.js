@@ -416,10 +416,10 @@ export default function FoodchoiceAddForm() {
         let buttonRight = document.getElementById('slideRight')
 
         buttonLeft.addEventListener('click', function(){
-            document.getElementById('slider').scrollLeft -= 5
+            document.getElementById('slider').scrollLeft -= 20
         })
         buttonRight.addEventListener('click', function(){
-            document.getElementById('slider').scrollLeft += 5
+            document.getElementById('slider').scrollLeft += 20
         })
     });
 
