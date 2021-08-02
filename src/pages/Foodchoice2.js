@@ -20,6 +20,8 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import "../components/styles/buttonStyle.css"
 
+import https from 'https';
+
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -82,6 +84,10 @@ function Foodchoice2() {
     const [filterFn, setFilterFn] = useState({fn: items => { return items;}})
     const { TbContainer, TbHead, TablePaginations, recordsAfterPagingAndSorting } = useTable(records, headCells, filterFn);
 
+    const agent = new https.Agent({  
+        rejectUnauthorized: false
+    }); 
+
     useEffect(() => {
         getItems()
     }, [])
@@ -90,7 +96,8 @@ function Foodchoice2() {
         // const response = await Axios.get('http://localhost:3001/api/foodchoicedb', {
         // const response = await Axios.get('http://159.65.133.73/api/products', {
         const response = await Axios.get('//159.65.133.73/api/stage', {
-            headers: {'Content-Type': 'application/json'}
+            headers: {'Content-Type': 'application/json'},
+            httpsAgent: agent,
         }).then((response) => {
             console.log(response.data.stage_2)
             var datacount = response.data.stage_2.length
