@@ -20,9 +20,6 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import "../components/styles/buttonStyle.css"
 
-// import https from 'https';
-const https = require('https');
-
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -86,19 +83,6 @@ function Foodchoice2() {
     const { TbContainer, TbHead, TablePaginations, recordsAfterPagingAndSorting } = useTable(records, headCells, filterFn);
 
 
-    // At instance level
-    const instance = Axios.create({
-        httpsAgent: new https.Agent({  
-        rejectUnauthorized: false
-        })
-    });
-    // instance.get('https://159.65.133.73/api/stage');
-    
-    // At request level
-    const agent = new https.Agent({  
-        rejectUnauthorized: false
-    });
-
     useEffect(() => {
         getItems()
     }, [])
@@ -107,9 +91,8 @@ function Foodchoice2() {
         myHeaders.append("Content-Type", "application/json")
         // const response = await Axios.get('http://localhost:3001/api/foodchoicedb', {
         // const response = await Axios.get('http://159.65.133.73/api/products', {
-        const response = await Axios.get('http://159.65.133.73/api/stage', {
+        const response = await Axios.get('https://foodnew.kaseamsanth.xyz/api/stage', {
             headers: {'Content-Type': 'application/json'},
-            // httpsAgent: agent,
         }).then((response) => {
             console.log(response.data.stage_2)
             var datacount = response.data.stage_2.length

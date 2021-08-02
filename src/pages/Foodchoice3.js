@@ -89,7 +89,7 @@ function Foodchoice3() {
     const getItems = async () => {
         // const response = await Axios.get('http://localhost:3001/api/foodchoicedb', {
         // const response = await Axios.get('http://159.65.133.73/api/products', {
-        const response = await Axios.get('http://159.65.133.73/api/stage', {
+        const response = await Axios.get('https://foodnew.kaseamsanth.xyz/api/stage', {
             headers: {'Content-Type': 'application/json'}
         }).then((response) => {
             console.log(response.data.stage_3)
