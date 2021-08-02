@@ -20,8 +20,8 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import "../components/styles/buttonStyle.css"
 
-// import https from 'https';
-const http = require('https');
+import https from 'https';
+// const https = require('https');
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -85,9 +85,19 @@ function Foodchoice2() {
     const [filterFn, setFilterFn] = useState({fn: items => { return items;}})
     const { TbContainer, TbHead, TablePaginations, recordsAfterPagingAndSorting } = useTable(records, headCells, filterFn);
 
-    const agent = new http.Agent({  
+
+    // At instance level
+    const instance = Axios.create({
+        httpsAgent: new https.Agent({  
         rejectUnauthorized: false
-    }); 
+        })
+    });
+    instance.get('http://159.65.133.73/api/stage');
+    
+    // At request level
+    const agent = new https.Agent({  
+        rejectUnauthorized: false
+    });
 
     useEffect(() => {
         getItems()
