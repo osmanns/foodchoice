@@ -20,8 +20,8 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import "../components/styles/buttonStyle.css"
 
-import https from 'https';
-// const https = require('https');
+// import https from 'https';
+const https = require('https');
 
 const useStyles = makeStyles(theme => ({
     root: {
