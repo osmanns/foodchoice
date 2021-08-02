@@ -95,7 +95,7 @@ function Foodchoice2() {
     const getItems = async () => {
         // const response = await Axios.get('http://localhost:3001/api/foodchoicedb', {
         // const response = await Axios.get('http://159.65.133.73/api/products', {
-        const response = await Axios.get('//159.65.133.73/api/stage', {
+        const response = await Axios.get('https://159.65.133.73/api/stage', {
             headers: {'Content-Type': 'application/json'},
             httpsAgent: agent,
         }).then((response) => {
