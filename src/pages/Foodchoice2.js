@@ -109,7 +109,7 @@ function Foodchoice2() {
         // const response = await Axios.get('http://159.65.133.73/api/products', {
         const response = await Axios.get('http://159.65.133.73/api/stage', {
             headers: {'Content-Type': 'application/json'},
-            httpsAgent: agent,
+            // httpsAgent: agent,
         }).then((response) => {
             console.log(response.data.stage_2)
             var datacount = response.data.stage_2.length
