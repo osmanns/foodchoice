@@ -20,7 +20,8 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import "../components/styles/buttonStyle.css"
 
-import https from 'https';
+// import https from 'https';
+const https = require('https');
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -91,7 +92,6 @@ function Foodchoice2() {
     useEffect(() => {
         getItems()
     }, [])
-  
     const getItems = async () => {
         var myHeaders= new Headers()
         myHeaders.append("Content-Type", "application/json")
@@ -99,7 +99,7 @@ function Foodchoice2() {
         // const response = await Axios.get('http://159.65.133.73/api/products', {
         const response = await Axios.get('http://159.65.133.73/api/stage', {
             headers: {'Content-Type': 'application/json'},
-            httpsAgent: agent,
+            // httpsAgent: agent,
         }).then((response) => {
             console.log(response.data.stage_2)
             var datacount = response.data.stage_2.length
