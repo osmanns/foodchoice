@@ -20,8 +20,8 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import "../components/styles/buttonStyle.css"
 
-import https from 'https';
-// const https = require('https');
+// import https from 'https';
+const https = require('https');
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -97,7 +97,7 @@ function Foodchoice2() {
         myHeaders.append("Content-Type", "application/json")
         // const response = await Axios.get('http://localhost:3001/api/foodchoicedb', {
         // const response = await Axios.get('http://159.65.133.73/api/products', {
-        const response = await Axios.get('https://159.65.133.73/api/stage', {
+        const response = await Axios.get('http://159.65.133.73/api/stage', {
             headers: {'Content-Type': 'application/json'},
             httpsAgent: agent,
         }).then((response) => {
