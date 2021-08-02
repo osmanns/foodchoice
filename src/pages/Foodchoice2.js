@@ -92,7 +92,7 @@ function Foodchoice2() {
         rejectUnauthorized: false
         })
     });
-    instance.get('http://159.65.133.73/api/stage');
+    instance.get('https://159.65.133.73/api/stage');
     
     // At request level
     const agent = new https.Agent({  
@@ -107,7 +107,7 @@ function Foodchoice2() {
         myHeaders.append("Content-Type", "application/json")
         // const response = await Axios.get('http://localhost:3001/api/foodchoicedb', {
         // const response = await Axios.get('http://159.65.133.73/api/products', {
-        const response = await Axios.get('http://159.65.133.73/api/stage', {
+        const response = await Axios.get('https://159.65.133.73/api/stage', {
             headers: {'Content-Type': 'application/json'},
             httpsAgent: agent,
         }).then((response) => {
