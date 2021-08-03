@@ -186,10 +186,10 @@ export default function FoodchoiceAddForm() {
     const [optionComponent, setOptionComponent] = useState([]) // หน่วยบรรจุภัณฑ์ (PackageUnit)
 
     useEffect(async () => {
-        const getFoodgroup = await Axios.get('http://159.65.133.73/api/group');
+        const getFoodgroup = await Axios.get('https://foodnew.kaseamsanth.xyz/api/group');
         setOptionFoodGroup(getFoodgroup.data)
 
-        const getFoodgroupSub = await Axios.get('http://159.65.133.73/api/package');
+        const getFoodgroupSub = await Axios.get('https://foodnew.kaseamsanth.xyz/api/package');
         setOptionPackageUnit(getFoodgroupSub.data)
     }, [])
   
@@ -197,7 +197,7 @@ export default function FoodchoiceAddForm() {
         getComponentName()
     }, [])
     const getComponentName = async () => {
-        const response = await Axios.get('http://159.65.133.73/api/ingredients', { 
+        const response = await Axios.get('https://foodnew.kaseamsanth.xyz/api/ingredients?search_data=', { 
             data: { COMPONENT_NAME: values.COMPONENT_NAME }
         }).then((response) => {
             setOptionComponent(response.data)
@@ -216,7 +216,7 @@ export default function FoodchoiceAddForm() {
 
     $( document ).ready(function() {
         $.ajax({
-            url: "http://159.65.133.73/api/criterion",
+            url: "https://foodnew.kaseamsanth.xyz/api/criterion",
             type: "POST",
             dataType: "JSON",
             // data: {barcode: values.barcode_id},
@@ -297,7 +297,8 @@ export default function FoodchoiceAddForm() {
                                     document.getElementById('product-per-one-portion').innerHTML = "(ไม่มีข้อมูล)"   
                                 }else{
                                     var weight_value = parseInt(weight);
-                                    document.getElementById('product-per-one-portion').innerHTML = "ต่อ " + data.count_per_one_portion + " " + data.package_unit + " (" + weight_value + " " + data.unit + ")"
+                                    // document.getElementById('product-per-one-portion').innerHTML = "ต่อ " + data.count_per_one_portion + " " + data.package_unit + " (" + weight_value + " " + data.unit + ")"
+                                    document.getElementById('product-per-one-portion').innerHTML = "ต่อ " + values.COUNT_PER_ONE_PORTION + " " + data.package_unit + " (" + values.COUNT_PORTION + " " + data.unit + ")"
                                 }
                                 
 
@@ -543,7 +544,8 @@ export default function FoodchoiceAddForm() {
                                     document.getElementById('product-per-one-portion').innerHTML = "(ไม่มีข้อมูล)"   
                                 }else{
                                     var weight_value = parseInt(weight);
-                                    document.getElementById('product-per-one-portion').innerHTML = "ต่อ " + data.count_per_one_portion + " " + data.package_unit + " (" + weight_value + " " + data.unit + ")"
+                                    // document.getElementById('product-per-one-portion').innerHTML = "ต่อ " + data.count_per_one_portion + " " + data.package_unit + " (" + weight_value + " " + data.unit + ")"
+                                    document.getElementById('product-per-one-portion').innerHTML = "ต่อ " + values.COUNT_PER_ONE_PORTION + " " + data.package_unit + " (" + values.COUNT_PORTION + " " + data.unit + ")"
                                 }
                                 // Check Nutrient Status
                                 function checkDrinkCriteriaStatus(){
@@ -1028,7 +1030,8 @@ export default function FoodchoiceAddForm() {
                                     document.getElementById('product-per-one-portion').innerHTML = "(ไม่มีข้อมูล)"   
                                 }else{
                                     var weight_value = parseInt(weight);
-                                    document.getElementById('product-per-one-portion').innerHTML = "ต่อ " + data.count_per_one_portion + " " + data.package_unit + " (" + weight_value + " " + data.unit + ")"
+                                    // document.getElementById('product-per-one-portion').innerHTML = "ต่อ " + data.count_per_one_portion + " " + data.package_unit + " (" + weight_value + " " + data.unit + ")"
+                                    document.getElementById('product-per-one-portion').innerHTML = "ต่อ " + values.COUNT_PER_ONE_PORTION + " " + data.package_unit + " (" + values.COUNT_PORTION + " " + data.unit + ")"
                                 }
                                 // Check Nutrient Status
                                 function checkNonCriteriaStatus(){
@@ -1328,7 +1331,7 @@ export default function FoodchoiceAddForm() {
         var myHeaders= new Headers()
         myHeaders.append("Content-Type", "application/json")
         // const response = await Axios.get(`https://foodnew.kaseamsanth.tk/api/products/${products_per_serving_id}`, {
-        const response = await Axios.get(`http://159.65.133.73/api/products/${products_per_serving_id}`, {
+        const response = await Axios.get(`https://foodnew.kaseamsanth.xyz/api/products/${products_per_serving_id}`, {
           headers: {'Content-Type': 'application/json'}
         }).then((response) => {
                 // if(response.data.OTHER_NUTRIENT_NAME != "" || null){
@@ -1793,10 +1796,10 @@ export default function FoodchoiceAddForm() {
         let buttonRight = document.getElementById('slideRight')
 
         buttonLeft.addEventListener('click', function(){
-            document.getElementById('slider').scrollLeft -= 5
+            document.getElementById('slider').scrollLeft -= 20
         })
         buttonRight.addEventListener('click', function(){
-            document.getElementById('slider').scrollLeft += 5
+            document.getElementById('slider').scrollLeft += 20
         })
     });
 

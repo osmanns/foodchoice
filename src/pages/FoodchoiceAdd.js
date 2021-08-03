@@ -185,10 +185,10 @@ export default function FoodchoiceAddForm() {
     const [optionComponent, setOptionComponent] = useState([]) // หน่วยบรรจุภัณฑ์ (PackageUnit)
 
     useEffect(async () => {
-        const getFoodgroup = await Axios.get('http://159.65.133.73/api/group');
+        const getFoodgroup = await Axios.get('https://foodnew.kaseamsanth.xyz/api/group');
         setOptionFoodGroup(getFoodgroup.data)
 
-        const getFoodgroupSub = await Axios.get('http://159.65.133.73/api/package');
+        const getFoodgroupSub = await Axios.get('https://foodnew.kaseamsanth.xyz/api/package');
         setOptionPackageUnit(getFoodgroupSub.data)
     }, [])
 
@@ -196,7 +196,7 @@ export default function FoodchoiceAddForm() {
         getComponentName()
     }, [])
     const getComponentName = async () => {
-        const response = await Axios.get('http://159.65.133.73/api/ingredients', { 
+        const response = await Axios.get('https://foodnew.kaseamsanth.xyz/api/ingredients?search_data=', { 
             data: { COMPONENT_NAME: values.COMPONENT_NAME }
         }).then((response) => {
             setOptionComponent(response.data)
@@ -217,7 +217,7 @@ export default function FoodchoiceAddForm() {
         getItems()
     }, [])
     const getItems = async () => {
-        const response = await Axios.get(`https://foodnew.kaseamsanth.tk/api/products/${products_per_serving_id}`, {
+        const response = await Axios.get(`https://foodnew.kaseamsanth.xyz/api/products/${products_per_serving_id}`, {
             headers: {'Content-Type': 'application/json'}
         }).then((response) => {
             var barcodeID = response.data[0].barcode_id
@@ -393,12 +393,12 @@ export default function FoodchoiceAddForm() {
 
         // Axios.post('http://localhost:3001/api/addfoodchoice', body, {
         // Axios.post('https://foodnew.kaseamsanth.tk/api/products', body, {
-        // Axios.post(`http://159.65.133.73/api/products/${products_per_serving_id}`, body, {
-        //     headers: {'Content-Type': 'application/json'}
-        // }).then((response) => {
-        //     console.log(response.data)
-        // })
-        // history.push("/Foodchoice")
+        Axios.post(`https://foodnew.kaseamsanth.xyz/api/products/${products_per_serving_id}`, body, {
+            headers: {'Content-Type': 'application/json'}
+        }).then((response) => {
+            console.log(response.data)
+        })
+        history.push("/Foodchoice")
     };
 
     // Handel Image 
