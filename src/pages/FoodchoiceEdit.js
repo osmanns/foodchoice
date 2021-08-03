@@ -1317,12 +1317,12 @@ export default function FoodchoiceAddForm() {
         }
         console.log(body)
 
-        // Axios.post(`http://159.65.133.73/api/products/${products_per_serving_id}`, body, {
-        //     headers: {'Content-Type': 'application/json'}
-        // }).then((response) => {
-        //     console.log(response.data)
-        // })
-        // history.push("/Foodchoice")
+        Axios.post(`https://foodnew.kaseamsanth.xyz/api/products/${products_per_serving_id}`, body, {
+            headers: {'Content-Type': 'application/json'}
+        }).then((response) => {
+            console.log(response.data)
+        })
+        history.push("/Foodchoice")
     };
 
     // Get data
