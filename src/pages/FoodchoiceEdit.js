@@ -1186,10 +1186,17 @@ export default function FoodchoiceAddForm() {
         setComponent({ value }); 
     }  
 
+//     useEffect(async () => {
+//         const currentURL = window.location.href // returns the absolute URL of a page
+        
+//         const pathname = window.location.pathname //returns the current url minus the domain name
+// console.log(currentURL)
+// console.log(pathname)
+//     }, [])
+
     // Submit
     const history = useHistory()
     const onFinish = (values) => {
-
         console.log('Success:', values);
         if(values.PRESENT_BOX1 === true){
             values.PRESENT_BOX1 = 1
@@ -1322,7 +1329,8 @@ export default function FoodchoiceAddForm() {
         }).then((response) => {
             console.log(response.data)
         })
-        history.push("/Foodchoice")
+        window.location.pathname = "/foodchoice"
+        // history.push("/Foodchoice")
     };
 
     // Get data
