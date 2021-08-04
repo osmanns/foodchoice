@@ -409,7 +409,7 @@ export default function FoodchoiceAddForm() {
         tag == 0 ? setFilterImages(images) : setFilterImages(images.filter(image => image.group == tag))
     }, [tag])
     const TagButton = ({ group, name, handlesettag }) => {
-        return <Button onClick={ () => handlesettag(group)}>{ name.toUpperCase() }</Button>
+        return <button onClick={ () => handlesettag(group)}>{ name.toUpperCase() }</button>
     }
     $( document ).ready(function() {
         let buttonLeft = document.getElementById('slideLeft')
@@ -431,12 +431,12 @@ export default function FoodchoiceAddForm() {
                         <Barcode value={values.barcode_id} {...config} />
                     </div>
                     
-                    <div handlesettag={setTag}>
+                    <div>
                         <Row>
                             <TagButton group={1} name="ด้านหน้าผลิตภัณฑ์" handlesettag={setTag} />
-                            <TagButton group={2} name="ข้อมูลโภชนาการ" handlesettag={setTag}/>
-                            <TagButton group={3} name="ส่วนประกอบโดยประมาณ" handlesettag={setTag}/>
-                            <TagButton group={4} name="เลขที่ อย. 13 หลัก" handlesettag={setTag}/>
+                            <TagButton group={2} name="ข้อมูลโภชนาการ" handlesettag={setTag} />
+                            <TagButton group={3} name="ส่วนประกอบ" handlesettag={setTag} />
+                            <TagButton group={4} name="เลขที่ อย." handlesettag={setTag} />
                         </Row>
 
                         <div className="containerImage">
